@@ -556,7 +556,8 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opcity 250ms linear, visability 250ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open {
   opacity: 1;
@@ -578,6 +579,11 @@ left: 50%;
 transform: translate(-50%, -50%);
 min-height: 584px;
 padding: 72px 24px 24px 24px;
+box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 
+0px 1px 3px rgba(0, 0, 0, 0.12),
+ 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms 
+  cubic-bezier(0.4, 0, 0.2, 1); 
 }
 /* ========================== */
 .modal-close-btn {
@@ -592,10 +598,16 @@ padding: 72px 24px 24px 24px;
   padding: 0;
   line-height: 0;
   border-radius: 50%;
-  border: rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+   border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn-icon {
   fill: #2E2F42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover .modal-close-btn-icon,
 .modal-close-btn:focus .modal-close-btn-icon {
@@ -717,15 +729,74 @@ margin-right: 8px;
   fill: #ffffff;
 }
 .send-form-btn {
-  display: inline-flex;
+  min-width: 169px;
 padding: 16px 32px;
-align-items: flex-start;
 gap: 10px;
 border-radius: 4px;
 background: var(--IRIS, #4D5AE5);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 width: auto;
-height: auto;
+height: 56px;
 margin: 24px 98px;
 display: block;
+font-weight: 500;
+line-height: 1.5;
+letter-spacing:  0.04em;
+color: #ffffff;
+border: none;
+ transition: background-color 250ms 
+ cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.about-subs {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+   color: #ffffff; 
+}
+.end-sub {
+  display: flex;
+  gap: 24px;
+}
+.subscr-form-label {
+
+}
+.subscribe-name {
+
+}
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  font-size: 12px;
+   line-height: 1.5;
+   letter-spacing: 0.04em;
+   padding-left: 16px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+   border-radius: 4px;
+   color: #ffffff;
+}
+.button-Subscr {
+  min-width: 165px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+   letter-spacing: 0.04em;
+   color: #ffffff;
+   cursor: pointer;
+   background-color: #4D5AE5;
+   border: none;
+   border-radius: 4px;
+
+}
+.subscribe-svg-button {
+  margin-left: 16px;
+
 }
